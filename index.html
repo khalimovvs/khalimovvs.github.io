@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Halimov Sarvarbek — Software Developer portfoliosi. TATU Software Engineering 3-kurs talabasi, amaliy dasturiy yechimlar va veb-ilovalar ishlab chiquvchi."
+  />
+  <meta name="author" content="Halimov Sarvarbek" />
+  <meta name="theme-color" content="#0a0c10" />
+  <title>Halimov Sarvarbek — Software Developer</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Typography: Plus Jakarta Sans & JetBrains Mono with graceful system fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Prevent flash of incorrect theme before CSS renders -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {
+        // Ignore storage access errors in restricted environments
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Skip link for keyboard accessibility -->
+  <a href="#main-content" class="skip-link">Asosiy kontentga o‘tish</a>
+
+  <!-- Subtle animated ambient background -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#hero" class="brand" aria-label="Halimov Sarvarbek — Bosh sahifa">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="brand-name">Halimov<span class="brand-accent">.</span></span>
+      </a>
+
+      <nav class="main-nav" id="primary-nav" aria-label="Asosiy navigatsiya">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link" data-section="about">Men haqimda</a></li>
+          <li><a href="#skills" class="nav-link" data-section="skills">Ko‘nikmalar</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">Loyihalarim</a></li>
+          <li><a href="#education" class="nav-link" data-section="education">Ta’lim</a></li>
+          <li><a href="#languages" class="nav-link" data-section="languages">Tillar</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Bog‘lanish</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          type="button"
+          class="icon-btn theme-toggle"
+          id="theme-toggle"
+          aria-label="Mavzuni o‘zgartirish"
+          aria-pressed="false"
+          title="Yorug‘ / Qorong‘i rejim"
+        >
+          <!-- Sun icon (shown in dark mode to switch to light) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <!-- Moon icon (shown in light mode to switch to dark) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          class="icon-btn menu-toggle"
+          id="menu-toggle"
+          aria-label="Menyuni ochish"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+        >
+          <span class="hamburger" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" hidden>
+      <nav aria-label="Mobil navigatsiya">
+        <ul class="mobile-nav-list">
+          <li><a href="#about" class="mobile-nav-link" data-section="about">Men haqimda</a></li>
+          <li><a href="#skills" class="mobile-nav-link" data-section="skills">Texnik ko‘nikmalar</a></li>
+          <li><a href="#projects" class="mobile-nav-link" data-section="projects">Loyihalarim</a></li>
+          <li><a href="#education" class="mobile-nav-link" data-section="education">Ta’lim</a></li>
+          <li><a href="#languages" class="mobile-nav-link" data-section="languages">Tillar</a></li>
+          <li><a href="#contact" class="mobile-nav-link" data-section="contact">Bog‘lanish</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero section" id="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-badge">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>TATU (TUIT) · Software Engineering · 3-kurs</span>
+          </div>
+
+          <h1 class="hero-name" id="hero-heading">Halimov Sarvarbek</h1>
+          <p class="hero-role">Software Developer</p>
+
+          <p class="hero-intro">
+            Toshkent axborot texnologiyalari universitetining Software Engineering yo‘nalishi
+            3-kurs talabasi. Tizimli dasturlash, veb-ilovalar va foydalanuvchilar uchun qulay
+            amaliy dasturiy yechimlar yaratishga qiziqaman.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <span>Loyihalarim</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Bog‘lanish</span>
+            </a>
+            <a
+              href="https://github.com/khalimovvs"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
+              aria-label="GitHub profiliga o‘tish"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Developer-themed visual: Interactive Code & Architecture Card -->
+        <div class="hero-visual reveal" aria-label="Dasturchi profili kodi">
+          <div class="visual-backdrop" aria-hidden="true">
+            <img src="assets/images/hero-accent.svg" alt="" class="visual-accent-svg" />
+          </div>
+
+          <div class="code-window">
+            <div class="code-window-header">
+              <div class="window-dots" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="window-filename">developer.profile.js</span>
+              <span class="window-lang">JS</span>
+            </div>
+
+            <div class="code-window-body">
+              <pre><code><span class="t-kw">const</span> <span class="t-var">developer</span> <span class="t-op">=</span> <span class="t-punc">{</span>
+  <span class="t-prop">name</span><span class="t-punc">:</span> <span class="t-str">"Halimov Sarvarbek"</span><span class="t-punc">,</span>
+  <span class="t-prop">role</span><span class="t-punc">:</span> <span class="t-str">"Software Developer"</span><span class="t-punc">,</span>
+  <span class="t-prop">university</span><span class="t-punc">:</span> <span class="t-str">"TUIT (TATU)"</span><span class="t-punc">,</span>
+  <span class="t-prop">major</span><span class="t-punc">:</span> <span class="t-str">"Software Engineering"</span><span class="t-punc">,</span>
+  <span class="t-prop">year</span><span class="t-punc">:</span> <span class="t-num">3</span><span class="t-punc">,</span>
+  <span class="t-prop">english</span><span class="t-punc">:</span> <span class="t-str">"IELTS 6.5"</span><span class="t-punc">,</span>
+  <span class="t-prop">stack</span><span class="t-punc">:</span> <span class="t-punc">[</span>
+    <span class="t-str">"C"</span><span class="t-punc">,</span> <span class="t-str">"C++"</span><span class="t-punc">,</span> <span class="t-str">"JavaScript"</span><span class="t-punc">,</span>
+    <span class="t-str">"HTML"</span><span class="t-punc">,</span> <span class="t-str">"CSS"</span><span class="t-punc">,</span> <span class="t-str">"PostgreSQL"</span>
+  <span class="t-punc">],</span>
+  <span class="t-prop">focus</span><span class="t-punc">:</span> <span class="t-str">"Amaliy va ishonchli dasturlar"</span>
+<span class="t-punc">};</span></code></pre>
+            </div>
+
+            <div class="code-window-footer">
+              <span class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">$</span>
+                <span>github.com/khalimovvs</span>
+              </span>
+              <span class="terminal-status">UTF-8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-index">01</span>
+          <div>
+            <h2 class="section-title" id="about-heading">Men haqimda</h2>
+            <p class="section-subtitle">Qisqacha tanishuv va maqsadlarim</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main card reveal">
+            <p>
+              Men <strong>Halimov Sarvarbek</strong>, Toshkent axborot texnologiyalari universiteti
+              (TATU / TUIT) ning <strong>Software Engineering</strong> yo‘nalishida tahsil olayotgan
+              3-kurs talabasiman.
+            </p>
+            <p>
+              Dasturiy ta’minot ishlab chiqish, algoritmik masalalarni tahlil qilish va real hayotda
+              foyda keltiradigan amaliy ilovalar yaratish mening asosiy qiziqishlarimdir. O‘qish
+              davomida ham tizimli dasturlash (C va Windows klaviatura texnologiyalari), ham zamonaviy
+              veb-texnologiyalar bilan ishlash orqali muhandislik ko‘nikmalarimni izchil rivojlantirib
+              bormoqdaman.
+            </p>
+            <p>
+              Toza kod yozish, tushunarli interfeys loyihalash va jamoada samarali hamkorlik qilishga
+              alohida e’tibor qarataman. Yangi texnologiyalarni o‘rganish va ularni aniq loyihalarda
+              sinab ko‘rish orqali tajriba orttirishga intilaman.
+            </p>
+          </div>
+
+          <aside class="about-highlights reveal" aria-label="Asosiy ma’lumotlar">
+            <div class="info-card card">
+              <span class="info-label">Universitet</span>
+              <strong class="info-value">Toshkent axborot texnologiyalari universiteti (TATU)</strong>
+            </div>
+            <div class="info-card card">
+              <span class="info-label">Yo‘nalish</span>
+              <strong class="info-value">Software Engineering (3-kurs)</strong>
+            </div>
+            <div class="info-card card">
+              <span class="info-label">Ingliz tili</span>
+              <strong class="info-value">IELTS 6.5</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-index">02</span>
+          <div>
+            <h2 class="section-title" id="skills-heading">Texnik ko‘nikmalar</h2>
+            <p class="section-subtitle">O‘quv va amaliy loyihalarda foydalanadigan texnologiyalar</p>
+          </div>
+        </div>
+
+        <!--
+          Skills are cleanly categorized for easy updates.
+          Add or remove <li class="skill-chip"> items inside any category card below.
+        -->
+        <div class="skills-grid">
+          <article class="skill-card card reveal">
+            <div class="skill-card-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </span>
+              <h3 class="skill-category">Programming</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill-chip">C</li>
+              <li class="skill-chip">C++</li>
+              <li class="skill-chip">JavaScript</li>
+              <li class="skill-chip">Python (asoslari)</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card reveal">
+            <div class="skill-card-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="20" x2="9" y2="9"></line>
+                </svg>
+              </span>
+              <h3 class="skill-category">Frontend</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill-chip">HTML</li>
+              <li class="skill-chip">CSS</li>
+              <li class="skill-chip">JavaScript</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card reveal">
+            <div class="skill-card-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </span>
+              <h3 class="skill-category">Database</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill-chip">PostgreSQL</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card reveal">
+            <div class="skill-card-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </span>
+              <h3 class="skill-category">Tools</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill-chip">Git</li>
+              <li class="skill-chip">GitHub</li>
+              <li class="skill-chip">VS Code</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-index">03</span>
+          <div>
+            <h2 class="section-title" id="projects-heading">Loyihalarim</h2>
+            <p class="section-subtitle">Shaxsiy, universitet va jamoaviy loyihalar</p>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Uzbek Keyboard — New Latin -->
+          <article class="project-card card reveal">
+            <div class="project-top">
+              <span class="project-role">Rol: Developer</span>
+              <span class="project-num" aria-hidden="true">01</span>
+            </div>
+
+            <h3 class="project-title">Uzbek Keyboard — New Latin</h3>
+
+            <p class="project-desc">
+              Windows 11 operatsion tizimi uchun yaratilgan nativ o‘zbek lotin klaviatura joylashuvi.
+              C tili va Windows klaviatura joylashuvi (keyboard layout) texnologiyalari asosida
+              ishlab chiqilgan bo‘lib, o‘zbekcha harflarni qulay va tizimli darajada kiritish imkonini beradi.
+            </p>
+
+            <ul class="tech-tags" aria-label="Ishlatilgan texnologiyalar">
+              <li>C</li>
+              <li>Windows Keyboard Layout</li>
+              <li>Windows 11</li>
+            </ul>
+
+            <div class="project-links">
+              <a
+                href="https://github.com/khalimovvs/UzbekKeyboard-NewLatin"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+                </svg>
+                <span>GitHub repozitoriy</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: CPU Scheduling Lab -->
+          <article class="project-card card reveal">
+            <div class="project-top">
+              <span class="project-role">Rol: University Project Developer</span>
+              <span class="project-num" aria-hidden="true">02</span>
+            </div>
+
+            <h3 class="project-title">CPU Scheduling Lab</h3>
+
+            <p class="project-desc">
+              Operatsion tizimlarda protsessor vaqtini rejalashtirish algoritmlarini vizual tarzda
+              o‘rganish uchun interaktiv o‘quv laboratoriyasi. Priority Preemptive, Priority
+              Non-Preemptive va Round Robin algoritmlarini amaliy simulyatsiya qiladi.
+            </p>
+
+            <ul class="tech-tags" aria-label="Ishlatilgan texnologiyalar">
+              <li>TypeScript</li>
+              <li>Priority Preemptive</li>
+              <li>Priority Non-Preemptive</li>
+              <li>Round Robin</li>
+            </ul>
+
+            <div class="project-links">
+              <a
+                href="https://github.com/khalimovvs/cpu-scheduling-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+                </svg>
+                <span>GitHub repozitoriy</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: SkillBridge -->
+          <article class="project-card card reveal">
+            <div class="project-top">
+              <span class="project-role">Rol: Team Developer</span>
+              <span class="project-num" aria-hidden="true">03</span>
+            </div>
+
+            <h3 class="project-title">SkillBridge</h3>
+
+            <p class="project-desc">
+              Dasturchilar uchun jamoaviy tarzda ishlab chiqilgan vakansiya va karyera platformasi.
+              Ushbu jamoaviy loyihada mening asosiy hissam foydalanuvchi interfeysini qayta
+              loyihalash (UI redesign) va frontend qismini rivojlantirishdan iborat bo‘ldi.
+            </p>
+
+            <ul class="tech-tags" aria-label="Ishlatilgan texnologiyalar">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Node.js</li>
+              <li>PostgreSQL</li>
+            </ul>
+
+            <div class="project-links">
+              <a
+                href="https://jsg-group-project.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link project-link-primary"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Jonli ko‘rish</span>
+              </a>
+              <a
+                href="https://github.com/komilov6/JSG-group-project-"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+                </svg>
+                <span>GitHub repozitoriy</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: RestoStaff -->
+          <article class="project-card card reveal">
+            <div class="project-top">
+              <span class="project-role">Rol: Project Manager</span>
+              <span class="project-num" aria-hidden="true">04</span>
+            </div>
+
+            <h3 class="project-title">RestoStaff</h3>
+
+            <p class="project-desc">
+              Restoran xodimlarini boshqarishga mo‘ljallangan Django asosidagi jamoaviy veb-ilova.
+              Loyihada jamoa faoliyatini muvofiqlashtirish, vazifalarni taqsimlash, muddatlarni
+              nazorat qilish va umumiy ish jarayonini tashkil etishga mas’ul bo‘lganman.
+            </p>
+
+            <ul class="tech-tags" aria-label="Ishlatilgan texnologiyalar">
+              <li>Django</li>
+              <li>Python</li>
+              <li>Project Coordination</li>
+              <li>Task Management</li>
+            </ul>
+
+            <div class="project-links" id="restostaff-links">
+              <!-- Configurable in js/script.js (PORTFOLIO_CONFIG.restoStaffRepoUrl) -->
+              <span class="project-link-muted" id="restostaff-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Repozitoriy havolasi sozlanadi</span>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION SECTION ==================== -->
+    <section class="section section-alt" id="education" aria-labelledby="education-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-index">04</span>
+          <div>
+            <h2 class="section-title" id="education-heading">Ta’lim</h2>
+            <p class="section-subtitle">Akademik yo‘nalish va universitet ma’lumotlari</p>
+          </div>
+        </div>
+
+        <article class="education-card card reveal">
+          <div class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <div class="edu-body">
+            <div class="edu-header">
+              <h3 class="edu-university">
+                Toshkent axborot texnologiyalari universiteti (TATU / TUIT)
+              </h3>
+              <span class="edu-badge" id="study-period-badge">3-kurs talabasi</span>
+            </div>
+            <p class="edu-major">Yo‘nalish: Software Engineering (Dasturiy injiniring)</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== LANGUAGES SECTION ==================== -->
+    <section class="section" id="languages" aria-labelledby="languages-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-index">05</span>
+          <div>
+            <h2 class="section-title" id="languages-heading">Tillar</h2>
+            <p class="section-subtitle">Muloqot va texnik hujjatlar bilan ishlash darajasi</p>
+          </div>
+        </div>
+
+        <div class="languages-grid">
+          <article class="lang-card card reveal">
+            <div class="lang-top">
+              <span class="lang-code" aria-hidden="true">UZ</span>
+              <span class="lang-level-tag">Ona tili</span>
+            </div>
+            <h3 class="lang-name">O‘zbek tili</h3>
+            <p class="lang-note">Ona tili — erkin og‘zaki va yozma muloqot.</p>
+          </article>
+
+          <article class="lang-card card reveal">
+            <div class="lang-top">
+              <span class="lang-code" aria-hidden="true">EN</span>
+              <span class="lang-level-tag lang-level-accent">IELTS 6.5</span>
+            </div>
+            <h3 class="lang-name">Ingliz tili</h3>
+            <p class="lang-note">
+              IELTS 6.5 sertifikati — texnik hujjatlar, xalqaro resurslar va professional muloqot uchun yetarli daraja.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section section-alt" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-index">06</span>
+          <div>
+            <h2 class="section-title" id="contact-heading">Bog‘lanish</h2>
+            <p class="section-subtitle">Hamkorlik, amaliyot yoki savollar uchun aloqa kanallari</p>
+          </div>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-intro reveal">
+            <h3>Aloqaga chiqishga tayyorman</h3>
+            <p>
+              Yangi loyihalar, jamoaviy ishlanmalar, amaliyot (internship) imkoniyatlari yoki
+              texnik masalalar bo‘yicha quyidagi kanallar orqali bog‘lanishingiz mumkin.
+            </p>
+          </div>
+
+          <!--
+            Contact placeholders (Telegram, Email, LinkedIn) can be configured
+            in js/script.js under PORTFOLIO_CONFIG.contacts without editing HTML.
+          -->
+          <div class="contact-grid">
+            <!-- GitHub (verified) -->
+            <a
+              href="https://github.com/khalimovvs"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-card card reveal"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+                </svg>
+              </span>
+              <div class="contact-meta">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/khalimovvs</span>
+              </div>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Telegram -->
+            <a
+              href="https://t.me/Khalimovvs"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-card card reveal"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 2L11 13"></path>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </span>
+              <div class="contact-meta">
+                <span class="contact-label">Telegram</span>
+                <span class="contact-value">@Khalimovvs</span>
+              </div>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:sarvarhalimov7@gmail.com"
+              class="contact-card card reveal"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </span>
+              <div class="contact-meta">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">sarvarhalimov7@gmail.com</span>
+              </div>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/sarvarbek-halimov-3032b6343/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-card card reveal"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </span>
+              <div class="contact-meta">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">Sarvarbek Halimov</span>
+              </div>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        &copy; <span id="current-year">2026</span> Halimov Sarvarbek. Barcha huquqlar himoyalangan.
+      </p>
+      <a
+        href="https://github.com/khalimovvs"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-link"
+      >
+        GitHub · @khalimovvs
+      </a>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button
+    type="button"
+    class="back-to-top"
+    id="back-to-top"
+    aria-label="Sahifa boshiga qaytish"
+    title="Yuqoriga qaytish"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"></path>
+    </svg>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
